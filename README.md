@@ -1,24 +1,38 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column | Type | Option |
+| ------ | ---- | ------ |
+| nickname | string | null: false |
+| email | string | null: false, unique: true |
+| password |string | null: false |
 
-* Ruby version
+### Association
+- has_many: lists
+- has_many: bookmarks
 
-* System dependencies
+## listsテーブル
 
-* Configuration
+| Column | Type | Option |
+| ------ | ---- | ------ |
+| list_name | string | null: false |
+| user_id | references | null: false, foreign_key: true |
 
-* Database creation
+### Association
+- has_many: bookmarks
+- belongs_to: user
 
-* Database initialization
+## bookmarksテーブル
+ | Column | Type | Option |
+ | ------ | ---- | ------ |
+ | title | string | null: false |
+ | url | string | |
+ | text | text | |
+ | user_id | references | null: false, foreign_key: true |
+ | list_id | references | null: false, foreign_key: true |
 
-* How to run the test suite
+ ### Association
+ - belongs_to: user
+ - belongs_to: list
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
