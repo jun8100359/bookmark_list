@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_10_052616) do
+ActiveRecord::Schema.define(version: 2021_02_10_102647) do
+
+  create_table "bookmarks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "url"
+    t.text "text"
+    t.bigint "user_id"
+    t.bigint "list_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_bookmarks_on_list_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
 
   create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "list_name", null: false
@@ -33,5 +45,7 @@ ActiveRecord::Schema.define(version: 2021_02_10_052616) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarks", "lists"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "lists", "users"
 end
