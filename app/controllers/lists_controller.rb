@@ -3,10 +3,6 @@ class ListsController < ApplicationController
     @lists = List.order(created_at: 'DESC')
   end
 
-  def new
-    @list = List.new
-  end
-
   def create
     @list = List.new(list_params)
     if @list.valid?
