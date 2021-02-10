@@ -1,0 +1,121 @@
+html{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+}
+
+.lists-bookmarks{
+  display: flex;
+}
+
+.header{
+  width: 100vw;
+  height: 100px;
+  background-color: white;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side-bar{
+  width: 15%;
+  height: calc(100vh - 100px);
+  background-color: white;
+  border: 1px solid black;
+  border-top: none;
+  text-align: center;
+}
+
+.new-bookmark{
+  height: 30px;
+  width: calc(100vw / 4);
+  align-items: center;
+  border: 1px solid black;
+  margin: 20px auto;
+}
+
+.bookmarks{
+  width: 55%;
+  height: calc(100vh - 100px);
+  border: 1px solid black;
+  border-top: none;
+  border-left: none;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+  overflow: scroll;
+}
+
+.app-name{
+  font-size: 50px;
+  margin-left: 10px;
+}
+
+.lists{
+  overflow: scroll;
+  height: calc(100vh - 100px - 40px);
+}
+
+.list{
+  width: 60%;
+  padding: 15px;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+.list-name{
+  font-size: 35px;
+}
+
+.user-name{
+  margin-right: 10px;
+}
+
+.new-list{
+  height: 40px;
+  border-top: 1px solid black;
+  padding: 8px 0;
+}
+
+.kensaku{
+  height: 80px;
+  display: block;
+}
+
+.bookmark{
+  height: 80px;
+  width: 80%;
+  border: 1px solid black;
+  margin: 20px auto;
+}
+
+.title-kensaku{
+  height: 30px;
+  width: calc(100vw / 4);
+  align-items: center;
+  border: 1px solid black;
+  margin: 20px auto;
+}
+
+.tag-kensaku{
+  height: 30px;
+  width: calc(100vw / 4);
+  align-items: center;
+  border: 1px solid black;
+  margin: 20px auto;
+}
+
+.iroiro{
+  width: 30%;
+  border-right: black 1px solid;
+}
+
+.btn{
+  display: block;
+}
