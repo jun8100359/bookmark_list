@@ -1,9 +1,16 @@
 <div class="lists">
-
+  <div class="list" id="list" style="display: none;">
+  </div>
+  <% @lists.each do |list| %>
+    <div class="list">
+      <%= list.list_name %>
+    </div>
+  <% end %>
 </div>
+
 <div class="new-list">
-  <%= form_with model: @item, id: "form" do |f| %>
-    <%= f.text_field :list_name %>
+  <%= form_with model: @list, id: "form" do |f| %>
+    <%= f.text_field :list_name, id: 'list_name' %>
     <%= f.submit '投稿する', id: 'submit' %>
   <% end %>
 </div>
