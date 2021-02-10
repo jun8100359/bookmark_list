@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.order('created_at DESC')
+    @lists = List.order(created_at: 'DESC')
   end
 
   def new
