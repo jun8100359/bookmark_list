@@ -1,20 +1,12 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.order('created_at DESC')
-  end
-
-  def new
     @list = List.new
+    @lists = List.order(created_at: 'DESC')
   end
 
   def create
-    @list = List.new(list_params)
-    if @list.valid?
-      @list.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    list = List.create(list_params)
+    render json:{ list: list }
   end
 
   private
