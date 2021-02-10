@@ -1,9 +1,9 @@
 <div class="lists">
-  <p class="list">リスト１</p>
-  <p class="list">リスト２</p>
-  <p class="list">リスト３</p>
-  <p class="list">リスト４</p>
+
 </div>
 <div class="new-list">
-  リストを作成
+  <%= form_with model: @item, id: "form" do |f| %>
+    <%= f.text_field :list_name %>
+    <%= f.submit '投稿する', id: 'submit' %>
+  <% end %>
 </div>
