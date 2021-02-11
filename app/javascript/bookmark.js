@@ -1,6 +1,7 @@
 function bookmark(){
   const clickBookmark = document.getElementById("click");
   const formBookmark = document.getElementById("bmf");
+  const url = location.href;
   const cancelBookmark = document.getElementById("cancel");
 
   clickBookmark.addEventListener('click', function(){
@@ -8,7 +9,7 @@ function bookmark(){
     cancelBookmark.setAttribute("style", "display: block;");
   });
 
-  cancelBookmark.addEventListener('mouseup', function(){
+  cancelBookmark.addEventListener('click', function(){
     formBookmark.removeAttribute("style", "display: block;");
     cancelBookmark.removeAttribute("style", "display: block;");
   });
@@ -17,8 +18,9 @@ function bookmark(){
   submit.addEventListener("click", (e) => {
     const formData = new FormData(document.getElementById('bm_form'));
     const XHR = new XMLHttpRequest();
-    XHR.open('POST', '/lists/@list_id.list_id', true);
+    XHR.open('POST', url, true);
     XHR.responseType = 'json';
+    XHR.send(formData);
     XHR.onload = () => {
       if (XHR.status != 200) {
         alert(`Error ${XHR.status}: ${XHR.statusText}`);
