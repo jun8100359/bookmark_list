@@ -33,23 +33,23 @@ html{
 }
 
 .new-bookmark{
-  height: 500px;
-  width: calc(100vw / 4);
-  align-items: center;
+  /* height: 500px; */
+  width: 70%;
   border: 1px solid black;
   margin: 20px auto;
 }
 
 .bookmarks{
-  width: 55%;
-  height: calc(100vh - 100px);
-  border: 1px solid black;
-  border-top: none;
-  border-left: none;
+  width: 80%;
+  height: 100% - 500px;
+  /* border: 1px solid black; */
+  /* border-top: none; */
+  /* border-left: none; */
   /* display: flex; */
   /* flex-wrap: wrap; */
   /* justify-content: center; */
   overflow: scroll;
+  margin: 20px auto;
 }
 
 .app-name{
@@ -119,21 +119,22 @@ html{
   border: 1px solid black;
   width: 90%;
   margin: 20px auto;
-  height: 50px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .nb-url{
   border: 1px solid black;
   width: 90%;
   margin: 20px auto;
-  height: 50px;
 }
 
 .nb-memo{
   border: 1px solid black;
   width: 90%;
   margin: 20px auto;
-  height: 300px;
   overflow: scroll;
+}
+
+.bm-field{
+  width: 80%;
 }

@@ -11,7 +11,7 @@
   </div>
   <% @lists.each do |list| %>
     <div class="list">
-      <%= list.list_name %>
+      <%= link_to list.list_name, list_bookmarks_index_path(list.id) %>
     </div>
   <% end %>
 </div>
