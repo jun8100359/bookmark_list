@@ -10,7 +10,7 @@ function list() {
       if (XHR.status != 200) {
         alert(`Error ${XHR.status}: ${XHR.statusText}`);
         return null;
-      }
+      };
       const item = XHR.response.list;
       const lists = document.getElementById("list");
       const formText = document.getElementById("list_name");
@@ -23,5 +23,5 @@ function list() {
     };
     e.preventDefault();
   });
-}
+};
 window.addEventListener('load', list);

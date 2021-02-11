@@ -1,6 +1,14 @@
 <div class="wrapper">
   <div class="header">
-    <%= render "shared/header" %>
+    <div class="app-name">
+      BookMarkList
+    </div>
+    <div class="list-name">
+    </div>
+    <div class="user-name">
+      <%= current_user.nickname %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn" %>
+    </div>
   </div>
   <div class="lists-bookmarks">
     <div class="side-bar">
