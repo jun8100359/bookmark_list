@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "lists#index"
   resources :lists, only: :create do
-    get 'bookmarks/index'
+    resources :bookmarks, only: [:index, :create]
   end
 end

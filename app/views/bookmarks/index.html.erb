@@ -9,14 +9,12 @@
 
     <div class="bm-field">
       <div class="new-bookmark">
-        <div class="nb-title">
-          タイトル
-        </div>
-        <div class="nb-url">
-          url
-        </div>
-        <div class="nb-memo">
-          メモ
+        <div class="click-new">
+          <%= form_with model: [@list_id, @bookmark], id: "bmf" do |f| %>
+            <%= f.text_field :title, id: 'title', class: 'nb-title' %>
+            <%= f.text_field :url, id: 'url', class: 'nb-url' %>
+            <%= f.text_area :text, id: 'text', class: 'nb-memo' %>
+          <% end %>
         </div>
       </div>
 
