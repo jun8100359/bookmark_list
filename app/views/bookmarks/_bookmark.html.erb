@@ -6,7 +6,7 @@
       <%= bookmark.title %>
     </div>
     <div class="bookmark-url">
-      <%= bookmark.bookmark_url %>
+      <%= raw Rinku.auto_link(h(bookmark.bookmark_url), :all, 'target="_blank"') %>
     </div>
     <div class="hide-text">
       <div class="bookmark-text">
