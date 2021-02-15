@@ -13,7 +13,7 @@
         <%= bookmark.text %>
       </div>
       <%= link_to '編集', edit_list_bookmark_path(bookmark.list_id, bookmark.id) %>
-      <%# <%= link_to '削除', %> %>
+      <%= link_to '削除', list_bookmark_path(bookmark.list_id, bookmark.id), method: :DELETE, data: {confirm: '削除しますか？'}%>
     </div>
   </div>
 <% end %>
