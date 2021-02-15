@@ -14,6 +14,21 @@ class BookmarksController < ApplicationController
     render json:{ bookmark: bookmark }
   end
 
+  def edit
+    @list_id = List.find(params[:list_id])
+    @lists = List.order(created_at: 'DESC')
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  def update
+    @bookmark = Bookmark.find(params[:id])
+    if @bookmark.update(bookmark_params)
+      redirect_to  "/lists/#{@bookmark.list_id}/bookmarks"
+    else
+      render :edit
+    end
+  end
+
   private
 
   def bookmark_params

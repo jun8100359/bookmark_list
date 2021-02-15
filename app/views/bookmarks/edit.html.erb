@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="header">
+    <%= render "shared/header" %>
+  </div>
+
+  <div class="lists-bookmarks">
+    <div class="side-bar">
+      <%= render "shared/side_bar" %>
+    </div>
+    <div class="edit-bookmark">
+      <%= form_with model: [@list_id, @bookmark], class: 'new-form', local: true do |f| %>
+        <%= f.text_field :title, class: 'nb-title' %>
+        <%= f.text_field :bookmark_url, class: 'nb-url' %>
+        <%= f.text_area :text, class: 'nb-memo' %>
+        <%= f.submit '編集する' %>
+      <% end %>
+    </div>
+  </div>
+</div>

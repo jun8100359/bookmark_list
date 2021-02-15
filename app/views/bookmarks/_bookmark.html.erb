@@ -12,7 +12,7 @@
       <div class="bookmark-text">
         <%= bookmark.text %>
       </div>
-      <%# <%= link_to '編集', %> %>
+      <%= link_to '編集', edit_list_bookmark_path(bookmark.list_id, bookmark.id) %>
       <%# <%= link_to '削除', %> %>
     </div>
   </div>
