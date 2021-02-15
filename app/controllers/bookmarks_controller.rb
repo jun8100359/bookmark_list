@@ -20,6 +20,15 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
   end
 
+  def update
+    @bookmark = Bookmark.find(params[:id])
+    if @bookmark.update(bookmark_params)
+      redirect_to  "/lists/#{@bookmark.list_id}/bookmarks"
+    else
+      render :edit
+    end
+  end
+
   private
 
   def bookmark_params
