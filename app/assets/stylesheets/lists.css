@@ -86,10 +86,11 @@ html{
 }
 
 .bookmark{
-  height: 80px;
+  /* height: 80px; */
   width: 70%;
   border: 1px solid black;
   margin: 20px auto;
+  display: block;
 }
 
 .title-kensaku{
@@ -160,20 +161,28 @@ html{
 
 .cancel-bmf{
   position: absolute;
-  display: none;
-  top: 105px;
-  left: 370px;
+  /* display: none; */
+  /* top: 105px; */
+  /* left: 370px; */
   border: 1px solid black;
 }
 
 .bookmark-title{
-
+  font-size: 40px;
+  word-wrap: break-word;
+  overflow: scroll;
 }
 
 .bookmark-url{
-
+  font-size: 30px;
+  word-wrap: break-word;
+  overflow: scroll;
 }
 
 .bookmark-text{
   
+}
+
+.hide-text{
+  display: none;
 }

@@ -1,0 +1,19 @@
+<div class="bookmark" id="bookmark" style="display: none;">
+</div>
+<% @bookmarks.each do |bookmark| %>
+  <div class="bookmark">
+    <div class="bookmark-title">
+      <%= bookmark.title %>
+    </div>
+    <div class="bookmark-url">
+      <%= bookmark.bookmark_url %>
+    </div>
+    <div class="hide-text">
+      <div class="bookmark-text">
+        <%= bookmark.text %>
+      </div>
+      <%# <%= link_to '編集', %> %>
+      <%# <%= link_to '削除', %> %>
+    </div>
+  </div>
+<% end %>

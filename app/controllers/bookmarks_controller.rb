@@ -4,10 +4,13 @@ class BookmarksController < ApplicationController
     @lists = List.order(created_at: 'DESC')
     @bookmark = Bookmark.new
     @list_id = List.find(params[:list_id])
+    @bookmarks = @list_id.bookmarks.order(created_at: 'DESC')
   end
 
   def create
-    bookmark = Bookmark.create(bookmark_params)
+    @list = List.find(params[:list_id])
+    bookmark = @list.bookmarks.new(bookmark_params)
+    bookmark.save
     render json:{ bookmark: bookmark }
   end
 
@@ -15,7 +18,7 @@ class BookmarksController < ApplicationController
 
   def bookmark_params
     @list_id = List.find(params[:list_id])
-    params.require(:bookmark).permit(:title, :url, :text).merge(user_id: current_user.id, list_id: @list_id.id)
+    params.require(:bookmark).permit(:title, :bookmark_url, :text).merge(user_id: current_user.id)
   end
 
 end

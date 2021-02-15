@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_02_10_102647) do
 
   create_table "bookmarks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.string "url"
+    t.string "bookmark_url"
     t.text "text"
     t.bigint "user_id"
     t.bigint "list_id"

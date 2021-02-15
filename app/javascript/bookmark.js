@@ -2,21 +2,20 @@ function bookmark(){
   const clickBookmark = document.getElementById("click");
   const formBookmark = document.getElementById("bmf");
   const url = location.href;
-  const cancelBookmark = document.getElementById("cancel");
 
-  clickBookmark.addEventListener('click', function(){
-    formBookmark.setAttribute("style", "display: block;");
-    cancelBookmark.setAttribute("style", "display: block;");
-  });
-
-  cancelBookmark.addEventListener('click', function(){
-    formBookmark.removeAttribute("style", "display: block;");
-    cancelBookmark.removeAttribute("style", "display: block;");
+  clickBookmark.addEventListener('click', function(e){
+    formBookmark.setAttribute('style', 'display: block;')
+    document.addEventListener('click', (e) => {
+      if(!e.target.closest('.click-new') && !e.target.closest('.new-bookmark')) {
+        formBookmark.removeAttribute('style', 'display: block')
+      };
+    });
   });
 
   const submit = document.getElementById("bm_submit");
   submit.addEventListener("click", (e) => {
     const formData = new FormData(document.getElementById('bm_form'));
+
     const XHR = new XMLHttpRequest();
     XHR.open('POST', url, true);
     XHR.responseType = 'json';
@@ -37,7 +36,7 @@ function bookmark(){
             ${item.title}
           </div>
           <div class="bookmark-url>
-            ${item.url}
+            ${item.bookmark_url}
           </div>
           <div class="bookmark-text>
             ${item.text}
