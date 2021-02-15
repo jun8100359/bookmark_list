@@ -174,13 +174,17 @@ html{
 }
 
 .bookmark-url{
-  font-size: 30px;
+  font-size: 20px;
   word-wrap: break-word;
   overflow: scroll;
+  border: 1px solid black;
+  margin: 10px;
 }
 
 .bookmark-text{
-  
+  font-size: 20px;
+  border: 1px solid black;
+  margin: 10px;
 }
 
 .hide-text{

@@ -3,11 +3,11 @@ function bookmark(){
   const formBookmark = document.getElementById("bmf");
   const url = location.href;
 
-  clickBookmark.addEventListener('click', function(e){
-    formBookmark.setAttribute('style', 'display: block;')
+  clickBookmark.addEventListener('click', function(){
+    formBookmark.setAttribute('style', 'display: block;');
     document.addEventListener('click', (e) => {
       if(!e.target.closest('.click-new') && !e.target.closest('.new-bookmark')) {
-        formBookmark.removeAttribute('style', 'display: block')
+        formBookmark.removeAttribute('style', 'display: block');
       };
     });
   });
@@ -31,15 +31,17 @@ function bookmark(){
       const formText2 = document.getElementById('url');
       const formText3 = document.getElementById('text');
       const HTML = `
-        <div class="bookmark" data-id=${item.id}>
+        <div class="bookmark">
           <div class="bookmark-title">
             ${item.title}
           </div>
           <div class="bookmark-url>
             ${item.bookmark_url}
           </div>
-          <div class="bookmark-text>
-            ${item.text}
+          <div class="hide-text">
+            <div class="bookmark-text>
+              ${item.text}
+            </div>
           </div>
         </div>`;
       bookmarks.insertAdjacentHTML('afterend', HTML);
@@ -48,6 +50,26 @@ function bookmark(){
       formText3.value = "";
     };
     e.preventDefault();
+    formBookmark.removeAttribute('style', 'display: block;');
   });
+  const openBookmarks = document.querySelectorAll(".bookmark");
+  openBookmarks.forEach(function(bookmark) {
+    const lastElementChild = bookmark.lastElementChild;
+    // const hideText = document.getElementsByClassName('hide-text');
+    bookmark.addEventListener('click', () => {
+      lastElementChild.setAttribute('style', 'display: block;');
+    });
+    document.addEventListener('click', (e) => {
+      if(!e.target.closest('.bookmark')) {
+          // const lastElementChild = bookmark.lastElementChild;
+          if ((lastElementChild.getAttribute('style') == 'display: block;') === !null) {
+            lastElementChild.removeAttribute('style', 'display: block;')
+          };
+        
+      };
+    });
+  });
+
+
 };
 window.addEventListener('load', bookmark);
