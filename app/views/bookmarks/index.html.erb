@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="new-bookmark" id="click">
+    <p>ブックマーク追加</p>
+  </div>
+  <div class="click-new" id="bmf">
+    <%= form_with model: [@list_id, @bookmark], class: 'new-form', id: 'bm_form' do |f| %>
+      <%= f.text_field :title, id: 'title', class: 'nb-title' %>
+      <%= f.text_field :bookmark_url, id: 'url', class: 'nb-url' %>
+      <%= f.text_area :text, id: 'text', class: 'nb-memo' %>
+      <%= f.submit '投稿する', id: 'bm_submit' %>
+    <% end %>
+    <div class="cancel-bmf" id="cancel">
+      キャンセル
+    </div>
+  </div>
+  
+  <div class="header">
+    <%= render "shared/header" %>
+  </div>
+
+  <div class="lists-bookmarks">
+    <div class="side-bar">
+      <%= render "shared/side_bar" %>
+    </div>
+
+    <div class="bm-field">
+      <div class="bookmarks">
+        <%= render 'bookmark' %>
+      </div>
+    </div>
+  </div>
+</div>

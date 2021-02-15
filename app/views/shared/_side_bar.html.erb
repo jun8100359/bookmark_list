@@ -1,9 +1,17 @@
+<div class="kensaku">
+  <div class="title-kensaku">
+    タイトル検索
+  </div>
+  <div class="tag-kensaku">
+    タグ検索
+  </div>
+</div>
 <div class="lists">
   <div class="list" id="list" style="display: none;">
   </div>
   <% @lists.each do |list| %>
     <div class="list">
-      <%= list.list_name %>
+      <%= link_to list.list_name, list_bookmarks_path(list.id) %>
     </div>
   <% end %>
 </div>
