@@ -29,6 +29,12 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy if current_user.id == @bookmark.user_id
+    redirect_to "/lists/#{@bookmark.list_id}/bookmarks"
+  end
+
   private
 
   def bookmark_params
