@@ -139,13 +139,14 @@ html{
 
 .new-bookmark{
   width: 120px;
-  background: #3ccace;
+  background: white;
   text-align: center;
   border-radius: 4%;
   bottom: 32px;
   right: 32px;
   position: fixed;
   padding: 15px;
+  border: 1px solid black;
 }
 
 .click-new{
@@ -157,14 +158,6 @@ html{
   height: 500px;
   background-color: blanchedalmond;
   margin: 0 auto;
-}
-
-.cancel-bmf{
-  position: absolute;
-  /* display: none; */
-  /* top: 105px; */
-  /* left: 370px; */
-  border: 1px solid black;
 }
 
 .bookmark-title{

@@ -55,17 +55,14 @@ function bookmark(){
   const openBookmarks = document.querySelectorAll(".bookmark");
   openBookmarks.forEach(function(bookmark) {
     const lastElementChild = bookmark.lastElementChild;
-    // const hideText = document.getElementsByClassName('hide-text');
     bookmark.addEventListener('click', () => {
       lastElementChild.setAttribute('style', 'display: block;');
     });
     document.addEventListener('click', (e) => {
       if(!e.target.closest('.bookmark')) {
-          // const lastElementChild = bookmark.lastElementChild;
           if ((lastElementChild.getAttribute('style') == 'display: block;') === !null) {
             lastElementChild.removeAttribute('style', 'display: block;')
           };
-        
       };
     });
   });
