@@ -26,11 +26,12 @@ html{
 
 .side-bar{
   width: 20%;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 210px);
   background-color: white;
   border: 1px solid black;
-  border-top: none;
   text-align: center;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
 
@@ -80,10 +81,10 @@ html{
   padding: 8px 0;
 }
 
-.kensaku{
-  height: 80px;
-  display: block;
-}
+/* .kensaku{ */
+  /* height: 80px; */
+  /* display: block; */
+/* } */
 
 .bookmark{
   /* height: 80px; */
@@ -93,21 +94,21 @@ html{
   display: block;
 }
 
-.title-kensaku{
-  height: 30px;
-  width: 70%;
-  align-items: center;
-  border: 1px solid black;
-  margin: 20px auto;
-}
+/* .title-kensaku{ */
+  /* height: 30px; */
+  /* width: 70%; */
+  /* align-items: center; */
+  /* border: 1px solid black; */
+  /* margin: 20px auto; */
+/* } */
 
-.tag-kensaku{
-  height: 30px;
-  width: 70%;
-  align-items: center;
-  border: 1px solid black;
-  margin: 20px auto;
-}
+/* .tag-kensaku{ */
+  /* height: 30px; */
+  /* width: 70%; */
+  /* align-items: center; */
+  /* border: 1px solid black; */
+  /* margin: 20px auto; */
+/* } */
 
 .btn{
   display: block;
@@ -182,4 +183,8 @@ html{
 
 .hide-text{
   display: none;
+}
+
+.image-tag{
+  margin-left: 50px;
 }
