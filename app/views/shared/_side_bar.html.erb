@@ -1,11 +1,11 @@
-<div class="kensaku">
-  <div class="title-kensaku">
-    タイトル検索
-  </div>
-  <div class="tag-kensaku">
-    タグ検索
-  </div>
-</div>
+<%# <div class="kensaku"> %>
+  <%# <div class="title-kensaku"> %>
+    <%# タイトル検索 %>
+  <%# </div> %>
+  <%# <div class="tag-kensaku"> %>
+    <%# タグ検索 %>
+  <%# </div> %>
+<%# </div> %>
 <div class="lists">
   <div class="list" id="list" style="display: none;">
   </div>
@@ -24,8 +24,8 @@
           <%= link_to '削除', list_path(list.id), method: :delete, data: {confirm: '削除しますか？'} %>
         </div>
       </div>
-
     </div>
+    
   <% end %>
 </div>
 
