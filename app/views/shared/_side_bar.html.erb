@@ -18,7 +18,7 @@
           編集
         </div>
         <div>
-          削除
+          <%= link_to '削除', list_path(list.id), method: :delete, data: {confirm: '削除しますか？'} %>
         </div>
       </div>
     </div>
