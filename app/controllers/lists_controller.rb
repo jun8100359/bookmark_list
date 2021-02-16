@@ -9,6 +9,12 @@ class ListsController < ApplicationController
     render json:{ list: list }
   end
 
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy if current_user.id == @list.user_id
+    redirect_to root_path
+  end
+
   private
 
   def list_params

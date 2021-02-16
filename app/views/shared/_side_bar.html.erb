@@ -1,18 +1,28 @@
-<div class="kensaku">
-  <div class="title-kensaku">
-    タイトル検索
-  </div>
-  <div class="tag-kensaku">
-    タグ検索
-  </div>
-</div>
+<%# <div class="kensaku"> %>
+  <%# <div class="title-kensaku"> %>
+    <%# タイトル検索 %>
+  <%# </div> %>
+  <%# <div class="tag-kensaku"> %>
+    <%# タグ検索 %>
+  <%# </div> %>
+<%# </div> %>
 <div class="lists">
   <div class="list" id="list" style="display: none;">
   </div>
   <% @lists.each do |list| %>
     <div class="list">
       <%= link_to list.list_name, list_bookmarks_path(list.id) %>
+      <%= image_tag '下向きの矢印のアイコン素材.jpeg', class: 'image-tag' %>
+      <div class="hide-text">
+        <div>
+          編集
+        </div>
+        <div>
+          <%= link_to '削除', list_path(list.id), method: :delete, data: {confirm: '削除しますか？'} %>
+        </div>
+      </div>
     </div>
+    
   <% end %>
 </div>
 
