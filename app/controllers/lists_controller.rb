@@ -9,6 +9,10 @@ class ListsController < ApplicationController
     render json:{ list: list }
   end
 
+  def update
+  end
+  
+
   private
 
   def list_params
