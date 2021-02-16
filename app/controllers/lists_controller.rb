@@ -18,6 +18,7 @@ class ListsController < ApplicationController
   def update
   end
 
+
   private
 
   def list_params
