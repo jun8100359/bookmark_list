@@ -15,7 +15,6 @@ function bookmark(){
   const submit = document.getElementById("bm_submit");
   submit.addEventListener("click", (e) => {
     const formData = new FormData(document.getElementById('bm_form'));
-
     const XHR = new XMLHttpRequest();
     XHR.open('POST', url, true);
     XHR.responseType = 'json';
