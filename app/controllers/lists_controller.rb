@@ -5,8 +5,14 @@ class ListsController < ApplicationController
   end
 
   def create
-    list = List.create(list_params)
-    render json:{ list: list }
+    @list = List.new(list_params)
+    if @list.valid?
+      @list.save
+      redirect_to list_bookmarks_path(@list[:id])
+    else
+      @lists = List.order(created_at: 'desc')
+      render :index
+    end
   end
 
   def destroy
