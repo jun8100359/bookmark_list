@@ -16,6 +16,12 @@ class ListsController < ApplicationController
   end
 
   def update
+    @list = List.find(params[:id])
+    if @list.update(list_params)
+      redirect_to list_bookmarks_path(@list.id)
+    else
+      render list_bookmarks_path(@list.id)
+    end
   end
 
 
