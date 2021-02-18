@@ -10,6 +10,7 @@ class ListsController < ApplicationController
       @list.save
       redirect_to list_bookmarks_path(@list[:id])
     else
+      @list = List.new
       @lists = List.order(created_at: 'desc')
       render :index
     end

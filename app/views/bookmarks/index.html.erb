@@ -4,10 +4,13 @@
   </div>
   <div class="click-new" id="bmf">
     <%= form_with model: [@list_id, @bookmark], class: 'new-form', id: 'bm_form', local: true do |f| %>
+      <%= f.label :title, "タイトル", class: 'title-label' %>
       <%= f.text_field :title, id: 'title', class: 'nb-title' %>
+      <%= f.label :bookmark_url, "URL", class: 'url-label' %>
       <%= f.text_field :bookmark_url, id: 'url', class: 'nb-url' %>
+      <%= f.label :text, "メモ", class: 'memo-label'%>
       <%= f.text_area :text, id: 'text', class: 'nb-memo' %>
-      <%= f.submit '投稿する', id: 'bm_submit' %>
+      <%= f.submit '投稿する', id: 'bm_submit', class: 'nb-submit' %>
     <% end %>
   </div>
   

@@ -14,7 +14,12 @@ class BookmarksController < ApplicationController
       bookmark.save
       redirect_to list_bookmarks_path(@list[:id])
     else
-      render list_bookmarks_path(@list[:id])
+      @list = List.new
+      @lists = List.order(created_at: 'DESC')
+      @bookmark = Bookmark.new
+      @list_id = List.find(params[:list_id])
+      @bookmarks = @list_id.bookmarks.order(created_at: 'DESC')
+      render :index
     end
   end
 
