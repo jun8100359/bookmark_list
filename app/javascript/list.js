@@ -24,7 +24,6 @@ function list() {
     e.preventDefault();
   });
   const imageTag = document.querySelectorAll('.image-tag');
-  const listHide = document.querySelectorAll('.hide-text');
   imageTag.forEach(function(tag) {
     const next = tag.nextElementSibling;
     tag.addEventListener('click', () => {

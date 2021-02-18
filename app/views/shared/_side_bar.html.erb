@@ -16,8 +16,9 @@
       <div class="hide-text">
         <div>
           <p>名前の編集</p>
-          <%= form_with url: "/lists/#{list.id}", method: :patch, local: true do |f| %>
+          <%= form_with model: list, method: :patch, local: true do |f| %>
             <%= f.text_field :list_name %>
+            <%= f.submit '編集する', class: 'edit-list' %>
           <% end %>
         </div>
         <div>
