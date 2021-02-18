@@ -3,7 +3,7 @@
     <p>ブックマーク追加</p>
   </div>
   <div class="click-new" id="bmf">
-    <%= form_with model: [@list_id, @bookmark], class: 'new-form', id: 'bm_form' do |f| %>
+    <%= form_with model: [@list_id, @bookmark], class: 'new-form', id: 'bm_form', local: true do |f| %>
       <%= f.text_field :title, id: 'title', class: 'nb-title' %>
       <%= f.text_field :bookmark_url, id: 'url', class: 'nb-url' %>
       <%= f.text_area :text, id: 'text', class: 'nb-memo' %>

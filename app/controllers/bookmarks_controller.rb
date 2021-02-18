@@ -10,8 +10,12 @@ class BookmarksController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     bookmark = @list.bookmarks.new(bookmark_params)
-    bookmark.save
-    render json:{ bookmark: bookmark }
+    if bookmark.valid?
+      bookmark.save
+      redirect_to list_bookmarks_path(@list[:id])
+    else
+      render list_bookmarks_path(@list[:id])
+    end
   end
 
   def edit
