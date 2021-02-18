@@ -199,3 +199,8 @@ html{
 .memo-label{
   font-size: 30px;
 }
+
+.alert{
+  background-color: orange;
+  text-align: center;
+}

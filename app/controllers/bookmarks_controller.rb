@@ -19,6 +19,7 @@ class BookmarksController < ApplicationController
       @bookmark = Bookmark.new
       @list_id = List.find(params[:list_id])
       @bookmarks = @list_id.bookmarks.order(created_at: 'DESC')
+      flash.now[:alert] = 'ブックマークの作成に失敗しました'
       render :index
     end
   end
@@ -34,6 +35,10 @@ class BookmarksController < ApplicationController
     if @bookmark.update(bookmark_params)
       redirect_to  "/lists/#{@bookmark.list_id}/bookmarks"
     else
+      @list = List.new
+      @lists = List.order(created_at: 'DESC')
+      @bookmark = Bookmark.find(params[:id])
+      flash.now[:alert] = 'ブックマークの編集に失敗しました'
       render :edit
     end
   end

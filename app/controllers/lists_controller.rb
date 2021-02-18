@@ -12,6 +12,7 @@ class ListsController < ApplicationController
     else
       @list = List.new
       @lists = List.order(created_at: 'desc')
+      flash.now[:alert] = 'リストの作成に失敗しました'
       render :index
     end
   end
@@ -27,7 +28,10 @@ class ListsController < ApplicationController
     if @list.update(list_params)
       redirect_to list_bookmarks_path(@list.id)
     else
-      render list_bookmarks_path(@list.id)
+      @list = List.new
+      @lists = List.order(created_at: 'DESC')
+      flash.now[:alert] = 'リストの編集に失敗しました'
+      render :index
     end
   end
 
