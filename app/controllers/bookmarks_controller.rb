@@ -1,4 +1,5 @@
 class BookmarksController < ApplicationController
+  before_action :move_to_session
   def index
     @list = List.new
     @lists = List.order(created_at: 'DESC')
@@ -56,4 +57,8 @@ class BookmarksController < ApplicationController
     params.require(:bookmark).permit(:title, :bookmark_url, :text).merge(user_id: current_user.id)
   end
 
+  def move_to_session
+    @list_id = List.find(params[:list_id])
+    return redirect_to root_path if !(current_user.id == @list_id.user_id)
+  end
 end
