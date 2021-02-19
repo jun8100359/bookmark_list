@@ -34,13 +34,6 @@ html{
   margin-left: 10px;
 }
 
-.bookmarks{
-  width: 100%;
-  height: 100% - 500px;
-  overflow: scroll;
-  margin: 20px auto;
-}
-
 .app-name{
   font-size: 50px;
   margin-left: 10px;
@@ -73,110 +66,8 @@ html{
   padding: 8px 0;
 }
 
-/* .kensaku{ */
-  /* height: 80px; */
-  /* display: block; */
-/* } */
-
-.bookmark{
-  /* height: 80px; */
-  width: 70%;
-  border: 1px solid black;
-  margin: 20px auto;
-  display: block;
-}
-
-/* .title-kensaku{ */
-  /* height: 30px; */
-  /* width: 70%; */
-  /* align-items: center; */
-  /* border: 1px solid black; */
-  /* margin: 20px auto; */
-/* } */
-
-/* .tag-kensaku{ */
-  /* height: 30px; */
-  /* width: 70%; */
-  /* align-items: center; */
-  /* border: 1px solid black; */
-  /* margin: 20px auto; */
-/* } */
-
 .btn{
   display: block;
-}
-
-.nb-title{
-  border: 1px solid black;
-  width: 90%;
-  margin: 0px 20px;
-}
-
-.nb-url{
-  border: 1px solid black;
-  width: 90%;
-  margin: 0px 20px;
-}
-
-.nb-memo{
-  border: 1px solid black;
-  width: 90%;
-  height: 300px;
-  margin: 0px 20px;
-  overflow: scroll;
-}
-
-.nb-submit{
-  background-color: white;
-  margin: 1px;
-}
-
-.bm-field{
-  width: 80%;
-}
-
-.new-bookmark{
-  width: 120px;
-  background: white;
-  text-align: center;
-  border-radius: 4%;
-  bottom: 32px;
-  right: 32px;
-  position: fixed;
-  padding: 15px;
-  border: 1px solid black;
-}
-
-.click-new{
-  display: none;
-  position: absolute;
-  top: 130px;
-  left: 370px;
-  width: 500px;
-  /* height: 500px; */
-  background-color: whitesmoke;
-  margin: 0 auto;
-  border: 4px double black;
-}
-
-.bookmark-title{
-  font-size: 40px;
-  word-wrap: break-word;
-  overflow: scroll;
-}
-
-.bookmark-url{
-  font-size: 15px;
-  word-wrap: break-word;
-  overflow: scroll;
-  border: 1px solid black;
-  margin: 10px;
-}
-
-.bookmark-text{
-  font-size: 20px;
-  border: 1px solid black;
-  margin: 10px;
 }
 
 .hide-text{
@@ -184,20 +75,7 @@ html{
 }
 
 .image-tag{
-  /* margin-left: 50px; */
   float: right;
-}
-
-.title-label{
-  font-size: 30px;
-}
-
-.url-label{
-  font-size: 30px;
-}
-
-.memo-label{
-  font-size: 30px;
 }
 
 .alert{
