@@ -10,7 +10,7 @@
     </div>
     <div class="hide-text">
       <div class="bookmark-text">
-        <%= bookmark.text %>
+        <%= safe_join((raw Rinku.auto_link(h(bookmark.text), :all, 'target="_blank"')).split("\n"),tag(:br)) %>
       </div>
       <%= link_to '編集', edit_list_bookmark_path(bookmark.list_id, bookmark.id) %>
       <%= link_to '削除', list_bookmark_path(bookmark.list_id, bookmark.id), method: :DELETE, data: {confirm: '削除しますか？'}%>

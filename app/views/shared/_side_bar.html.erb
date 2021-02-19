@@ -10,6 +10,7 @@
   <div class="list" id="list" style="display: none;">
   </div>
   <% @lists.each do |list| %>
+  <% if current_user.id == list.user_id%>
     <div class="list">
       <%= link_to list.list_name, list_bookmarks_path(list.id) %>
       <%= image_tag '下向きの矢印のアイコン素材.jpeg', class: 'image-tag' %>
@@ -26,12 +27,12 @@
         </div>
       </div>
     </div>
-    
+  <% end %>
   <% end %>
 </div>
 
 <div class="new-list">
-  <%= form_with model: @list, id: "form" do |f| %>
+  <%= form_with model: @list, id: "form", local: true do |f| %>
     <%= f.text_field :list_name, id: 'list_name' %>
     <%= f.submit '投稿する', id: 'submit' %>
   <% end %>

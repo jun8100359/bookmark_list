@@ -1,12 +1,21 @@
 class ListsController < ApplicationController
+
   def index
     @list = List.new
     @lists = List.order(created_at: 'DESC')
   end
 
   def create
-    list = List.create(list_params)
-    render json:{ list: list }
+    @list = List.new(list_params)
+    if @list.valid?
+      @list.save
+      redirect_to list_bookmarks_path(@list[:id])
+    else
+      @list = List.new
+      @lists = List.order(created_at: 'desc')
+      flash.now[:alert] = 'リストの作成に失敗しました'
+      render :index
+    end
   end
 
   def destroy
@@ -20,7 +29,10 @@ class ListsController < ApplicationController
     if @list.update(list_params)
       redirect_to list_bookmarks_path(@list.id)
     else
-      render list_bookmarks_path(@list.id)
+      @list = List.new
+      @lists = List.order(created_at: 'DESC')
+      flash.now[:alert] = 'リストの編集に失敗しました'
+      render :index
     end
   end
 
