@@ -9,7 +9,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     if @list.valid?
       @list.save
-      redirect_to list_bookmarks_path(@list[:id])
+      redirect_back(fallback_location: list_bookmarks_path(@list[:id]))
     else
       @list = List.new
       @lists = List.order(created_at: 'desc')
